@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 import os
 from pathlib import Path
+# settings.py
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
@@ -29,9 +33,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-^y5fttb^h0!)@-4&4@#@x#kw@$lt&nw=gs1qxgmmdkwmvoj3oq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+['.vercel.app', '.now.sh']
 
 
 # Application definition
