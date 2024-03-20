@@ -12,8 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 import os
 from pathlib import Path
-from dotenv import load_dotenv
-load_dotenv()
+
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
@@ -47,7 +46,6 @@ INSTALLED_APPS = [
     'research_repo_app',
     'crispy_forms',
     'crispy_bootstrap5',
-    'dotenv',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap5' 
