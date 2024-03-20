@@ -1,0 +1,39 @@
+
+{% extends 'base.html' %}
+{% load custom_filters %}
+
+{% block title %}Research Paper Details{% endblock %}
+
+{% block content %}
+<div class="card mb-4">
+    <div class="card-body">
+        <h5 class="card-title">{{ research_paper.title }}</h5>
+        <p class="card-text">{{ research_paper.description }}</p>
+    </div>
+</div>
+
+<h2 class="mt-4">Preview of Research Paper</h2>
+
+<iframe src="{{ research_paper.file.url }}" width="100%" height="600px"></iframe>
+
+
+<h2 class="mt-4">Associated Research Data</h2>
+<div class="row">
+{% for research_data in associated_research_data %}
+  <div class="col-md-4 mb-4">
+    <div class="card">
+      <div class="card-body">
+        {% if research_data.data_file.url|lower|endswith:'.jpg' or research_data.data_file.url|lower|endswith:'.jpeg' or research_data.data_file.url|lower|endswith:'.png' or research_data.data_file.url|lower|endswith:'.gif' %}
+          <img src="{{ research_data.data_file.url }}" class="card-img-top" alt="{{ research_data.title }}">
+        {% else %}
+          <h5 class="card-title">{{ research_data.title }}</h5>
+        {% endif %}
+        <div class="card-footer">
+          <a href="{{ research_data.data_file.url }}" class="btn btn-primary" download>Download</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
+{% endblock %}
