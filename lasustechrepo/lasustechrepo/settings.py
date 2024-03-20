@@ -33,7 +33,7 @@ SECRET_KEY = 'django-insecure-^y5fttb^h0!)@-4&4@#@x#kw@$lt&nw=gs1qxgmmdkwmvoj3oq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -89,11 +89,11 @@ WSGI_APPLICATION = 'lasustechrepo.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get("POSTGRES_DATABASE"),
-        'USER': os.environ.get("DB_USER"),
-        'PASSWORD': os.environ.get("POSTGRES_PASSWORD"),
-        'HOST': os.environ.get("POSTGRES_HOST"),
-        'PORT': os.environ.get("DB_PORT"),
+        'NAME': 'postgres',
+        'USER':'postgres.gfkdddxopclvcurvlvpn',
+        'PASSWORD': 'Rak5ha5a...',
+        'HOST': 'aws-0-eu-west-2.pooler.supabase.com',
+        'PORT': '5432',
     }
 }
 
