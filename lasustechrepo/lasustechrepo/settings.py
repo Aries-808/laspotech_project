@@ -12,7 +12,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 import os
 from pathlib import Path
-
+from dotenv import load_dotenv
+load_dotenv()
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
@@ -87,11 +88,11 @@ WSGI_APPLICATION = 'lasustechrepo.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'postgres.folicjjorrncxzlnmnxa',
-        'PASSWORD': 'YOUR-PASSWORD',
-        'HOST': 'aws-0-eu-west-2.pooler.supabase.com',
-        'PORT': '5432',
+        'NAME': os.environ.get("DB_NAME"),
+        'USER': os.environ.get("DB_USER"),
+        'PASSWORD': os.environ.get("DB_PASSWORD"),
+        'HOST': os.environ.get("DB_HOST"),
+        'PORT': os.environ.get("DB_PORT"),
     }
 }
 
