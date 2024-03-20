@@ -1,4 +1,5 @@
 # build_files.sh
+python.exe -m pip install --upgrade pip
 pip install -r requirements.txt
 pip install django
 # make migrations
