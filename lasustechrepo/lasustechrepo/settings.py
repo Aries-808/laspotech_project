@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'research_repo_app',
     'crispy_forms',
     'crispy_bootstrap5',
+    'dotenv',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap5' 
