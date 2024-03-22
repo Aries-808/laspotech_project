@@ -92,8 +92,19 @@ def research_list(request):
     research_papers = ResearchPaper.objects.all()
     return render(request, 'research_list.html', {'research_papers': research_papers})
 
+def thesis_list(request):
+    theses = Thesis.objects.all()
+    return render(request, 'thesis_list.html', {'theses': theses})
 
 def research_details(request, paper_id):
     research_paper = get_object_or_404(ResearchPaper, pk=paper_id)
     associated_research_data = ResearchData.objects.filter(title=research_paper)
     return render(request, 'research_details.html', {'research_paper': research_paper, 'associated_research_data': associated_research_data})
+
+def thesis_list(request):
+    theses = Thesis.objects.all()
+    return render(request, 'thesis_list.html', {'theses': theses})
+
+def thesis_details(request, thesis_id):
+    thesis = get_object_or_404(Thesis, pk=thesis_id)
+    return render(request, 'thesis_details.html', {'thesis': thesis})

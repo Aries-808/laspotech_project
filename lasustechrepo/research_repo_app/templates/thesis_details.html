@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Thesis Details{% endblock %}
+{% block content %}
+<div class="card mb-4">
+    <div class="card-body">
+        <h5 class="card-title">{{ thesis.title }}</h5>
+        <p class="card-text">{{ thesis.description }}</p>
+    </div>
+</div>
+
+<h2 class="mt-4">Preview of Thesis</h2>
+
+<iframe src="{{ thesis.file.url }}" width="100%" height="600px"></iframe>
+{% endblock %}

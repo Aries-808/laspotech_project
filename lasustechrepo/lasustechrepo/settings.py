@@ -15,6 +15,8 @@ from pathlib import Path
 from dotenv import load_dotenv
 import mimetypes 
   
+
+  
 mimetypes.add_type("text/css", ".css", True)
 
 load_dotenv()
@@ -35,7 +37,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-^y5fttb^h0!)@-4&4@#@x#kw@$lt&nw=gs1qxgmmdkwmvoj3oq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -102,6 +104,9 @@ DATABASES = {
 }
 
 
+SUPABASE_URL = "https://gfkdddxopclvcurvlvpn.supabase.co"
+SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdma2RkZHhvcGNsdmN1cnZsdnBuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA5NjAyODYsImV4cCI6MjAyNjUzNjI4Nn0.gJQhvKiBEFSvhODf8SDk0SXeV1wwDTF_ECDSqYSfV4s"
+
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
@@ -142,6 +147,7 @@ STATICFILES_DIRS = [str(BASE_DIR / "static")]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
